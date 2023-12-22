@@ -40,16 +40,14 @@ const updateAssignment = asyncHandler(async (req, res) => {
         throw new Error('Assignment not found');
     }
 
-    const user = await User.findById(req.user.id);
-
     // check for user
-    if (!user) {
+    if (!req.user) {
         res.status(401)
         throw new Error('User not found')
     }
 
     // ensure the logged in user matches the assignment user
-    if(assignment.user.toString() !== user.id) {
+    if(assignment.user.toString() !== req.user.id) {
         res.status(401)
         throw new Error('User not authorized.')
     }
@@ -69,16 +67,14 @@ const deleteAssignment = asyncHandler(async (req, res) => {
         throw new Error('Assignment not found');
     }
 
-    const user = await User.findById(req.user.id);
-
     // check for user
-    if (!user) {
+    if (!req.user) {
         res.status(401)
         throw new Error('User not found')
     }
 
     // ensure the logged in user matches the assignment user
-    if(assignment.user.toString() !== user.id) {
+    if(assignment.user.toString() !== req.user.id) {
         res.status(401)
         throw new Error('User not authorized.')
     }
