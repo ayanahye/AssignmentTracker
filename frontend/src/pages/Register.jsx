@@ -69,7 +69,7 @@ function Register() {
     return (
         <div className='cont1'>
           <div className="login-ele">
-            <section className='heading w-100' style={{ color: "rgb(74, 141, 212)" }}>
+            <section className='heading w-100' style={{ color: "rgb(74, 141, 212)" , margin:'25px'}}>
               <h1>
                 <FaUser style={{ color: "rgb(74, 141, 212)", marginRight: '15px' }} />Register
               </h1>
@@ -123,7 +123,7 @@ function Register() {
                   />
                 </div>
                 <div className="form-group mb-4">
-                  <button type="submit" className='btn btn-primary w-100'>Submit</button>
+                  <button style={{marginBottom:'25px'}} type="submit" className='btn btn-primary w-100'>Submit</button>
                 </div>
               </form>
             </section>

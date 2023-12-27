@@ -6,6 +6,7 @@ import AssignmentForm from '../components/AssignmentForm'
 import Spinner from '../components/Spinner'
 import AssignmentItem from '../components/AssignmentItem'
 import { getAssignments, reset } from '../features/assignments/assignmentSlice'
+import "../styles/Dashboard.css";
 
 function Dashboard() {
     const navigate = useNavigate()
@@ -38,23 +39,24 @@ function Dashboard() {
     }
 
     return (
-        <>
+        <div className="cont1">
             <section className='heading'>
-                <h1>Welcome {user && user.name}</h1>
+                <h1 style={{color:"rgb(74, 141, 212)"}}>Welcome {user && user.name}</h1>
                 <p>Assignments Dashboard</p>
-            </section>
+
             <AssignmentForm />
-            <section className="content">
-                {assignments.length > 0 ? (
-                    <div className="assignments">
-                        {assignments.map((assignment) => (
-                            <AssignmentItem key={assignment._id} assignment={assignment} />
-                        ))}
-                    </div>
-                ) : (<h3>You have no assignments.</h3>)}
             </section>
-        </>
-    )
+                <section className="content">
+                    {assignments.length > 0 ? (
+                        <div className="assignments">
+                            {assignments.map((assignment) => (
+                                <AssignmentItem key={assignment._id} assignment={assignment} />
+                            ))}
+                        </div>
+                    ) : (<h3 style={{color:"rgb(74, 141, 212)"}}>You have no assignments.</h3>)}
+                </section>
+        </div>
+    );
 }
 
 export default Dashboard

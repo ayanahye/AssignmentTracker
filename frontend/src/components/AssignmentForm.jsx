@@ -2,6 +2,7 @@ import {useState} from 'react'
 import { useDispatch } from 'react-redux';
 import {createAssignment} from '../features/assignments/assignmentSlice';
 
+
 function AssignmentForm() {
     const [text, setText] = useState("");
 
@@ -15,19 +16,27 @@ function AssignmentForm() {
     }
 
     return (
-        <section className='form'>
-            <form onSubmit={onSubmit} >
-                <div className="form-group">
-                    <label htmlFor='text'>Assignment</label>
-                    <input type="text" name="text" id="text" value={text} onChange={(e) => setText(e.target.value)}></input>
+        <section className='form' style={{width: '100%', marginBottom: '20px'}}>
+            <form onSubmit={onSubmit} className="container mt-4">
+                <div className="mb-3">
+                    <input
+                        type="text"
+                        className="form-control"
+                        placeholder='Add Assignment'
+                        id="text"
+                        name="text"
+                        value={text}
+                        onChange={(e) => setText(e.target.value)}
+                    />
                 </div>
-                <div className="form-group">
-                    <button className="btn" type="submit">Add Assignment</button>
+                <div className="mb-3">
+                    <button className="btn btn-primary w-100" type="submit">
+                        Add Assignment
+                    </button>
                 </div>
             </form>
-
         </section>
-    )
+    );
 }
 
 export default AssignmentForm;
