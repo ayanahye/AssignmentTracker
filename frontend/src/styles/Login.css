@@ -1,19 +1,35 @@
 .cont1 {
-    background-color: red;
-    height: 95vh;
+    background-color: rgb(46, 44, 44);
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
     padding: 0;
-
 }
 
 .login-ele {
-    background-color: blue;
+    background-color: rgb(75, 75, 80);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-height: 500px;
+    height: 90%;
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
+@media (max-width: 768px) {
+    .login-ele {
+        width: 90%;
+    }
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 50px;
 }

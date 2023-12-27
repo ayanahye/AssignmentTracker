@@ -8,6 +8,7 @@ import {toast} from 'react-toastify';
 import {FaUser} from 'react-icons/fa';
 import {register, reset} from '../features/auth/authSlice';
 import Spinner from '../components/Spinner';
+import "../styles/Login.css";
 
 function Register() {
 
@@ -66,63 +67,69 @@ function Register() {
     }
 
     return (
-        <>
-            <section className='heading'>
-                <h1>
-                    <FaUser />Register
-                </h1>
-                <p>Please create an account</p>
+        <div className='cont1'>
+          <div className="login-ele">
+            <section className='heading w-100' style={{ color: "rgb(74, 141, 212)" }}>
+              <h1>
+                <FaUser style={{ color: "rgb(74, 141, 212)", marginRight: '15px' }} />Register
+              </h1>
+              <p>Please create an account</p>
             </section>
-
-            <section className='form'>
-                <form onSubmit={onSubmit}>
-                    <div className="form-group">
-                        <input type="text" 
-                            className="form-control" 
-                            id="name" 
-                            name="name" 
-                            value={name} 
-                            placeholder="Enter your name" 
-                            onChange={onChange}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input type="email" 
-                            className="form-control" 
-                            id="email" 
-                            name="email" 
-                            value={email} 
-                            placeholder="Enter your email" 
-                            onChange={onChange}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input type="password" 
-                            className="form-control" 
-                            id="password" 
-                            name="password" 
-                            value={password} 
-                            placeholder="Enter your password" 
-                            onChange={onChange}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input type="password" 
-                            className="form-control" 
-                            id="password2" 
-                            name="password2" 
-                            value={password2} 
-                            placeholder="Confirm your password" 
-                            onChange={onChange}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <button type="submit" className='btn'>Submit</button>
-                    </div>
-                </form>
+    
+            <section className='form w-100'>
+              <form onSubmit={onSubmit}>
+                <div className="form-group mb-4">
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="name"
+                    name="name"
+                    value={name}
+                    placeholder="Enter your name"
+                    onChange={onChange}
+                  />
+                </div>
+                <div className="form-group mb-4">
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="email"
+                    name="email"
+                    value={email}
+                    placeholder="Enter your email"
+                    onChange={onChange}
+                  />
+                </div>
+                <div className="form-group mb-4">
+                  <input
+                    type="password"
+                    className="form-control"
+                    id="password"
+                    name="password"
+                    value={password}
+                    placeholder="Enter your password"
+                    onChange={onChange}
+                  />
+                </div>
+                <div className="form-group mb-4">
+                  <input
+                    type="password"
+                    className="form-control"
+                    id="password2"
+                    name="password2"
+                    value={password2}
+                    placeholder="Confirm your password"
+                    onChange={onChange}
+                  />
+                </div>
+                <div className="form-group mb-4">
+                  <button type="submit" className='btn btn-primary w-100'>Submit</button>
+                </div>
+              </form>
             </section>
-        </>
-    )
-}
+          </div>
+        </div>
+      );
+    }
 
 export default Register
