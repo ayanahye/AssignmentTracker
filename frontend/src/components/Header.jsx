@@ -3,6 +3,7 @@ import {FaSignInAlt, FaSignOutAlt, FaUser} from 'react-icons/fa'
 import {Link, useNavigate} from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import {logout, reset} from '../features/auth/authSlice';
+import "../styles/Header.css";
 
 function Header() {
     const navigate = useNavigate()
@@ -22,7 +23,7 @@ function Header() {
             <div className='logo'>
                 <Link to='/'>AssignmentSetter</Link>
             </div>
-            <ul>
+            <ul class="link-ele">
                 {user ? (
                     <li>
                         <button className='btn' onClick={onLogout}>

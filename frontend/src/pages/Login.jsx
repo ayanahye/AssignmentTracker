@@ -7,6 +7,9 @@ import {toast} from 'react-toastify';
 import {login, reset} from '../features/auth/authSlice';
 import Spinner from '../components/Spinner';
 
+import "../styles/Login.css";
+
+
 function Login() {
 
     const [formData, setFormData] = useState({
@@ -57,42 +60,50 @@ function Login() {
     }
 
     return (
-        <>
-            <section className='heading'>
-                <h1>
-                    <FaSignInAlt />Login
-                </h1>
-                <p>Login to see assignments</p>
-            </section>
+        <div className='cont1'>
+            <div className="login-ele">
+                <section className='heading'>
+                    <h1>
+                        <FaSignInAlt />Login
+                    </h1>
+                    <p>Login to see assignments</p>
+                </section>
 
-            <section className='form'>
-                <form onSubmit={onSubmit}>
-                    <div className="form-group">
-                        <input type="email" 
-                            className="form-control" 
-                            id="email" 
-                            name="email" 
-                            value={email} 
-                            placeholder="Enter your email" 
-                            onChange={onChange}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input type="password" 
-                            className="form-control" 
-                            id="password" 
-                            name="password" 
-                            value={password} 
-                            placeholder="Enter your password" 
-                            onChange={onChange}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <button type="submit" className='btn'>Submit</button>
-                    </div>
-                </form>
-            </section>
-        </>
+                <section className='form'>
+                    <form onSubmit={onSubmit}>
+                        <div className="form-group">
+                            <input type="email" 
+                                className="form-control" 
+                                id="email" 
+                                name="email" 
+                                value={email} 
+                                placeholder="Enter your email" 
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input type="password" 
+                                className="form-control" 
+                                id="password" 
+                                name="password" 
+                                value={password} 
+                                placeholder="Enter your password" 
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <button type="submit" className='btn'>Submit</button>
+                        </div>
+                    </form>
+                </section>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+        </div>
     )
 }
 
