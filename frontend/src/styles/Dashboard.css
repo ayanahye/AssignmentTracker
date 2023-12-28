@@ -1,8 +1,13 @@
 
-.cont1 {
+.cont2 {
+    background-color: rgb(46, 44, 44);
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    color: white;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    margin-top: 100px;
 }
 
 .heading {

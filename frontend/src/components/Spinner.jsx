@@ -4,7 +4,7 @@ function Spinner() {
     return (
         <div className="loadingSpinnerContainer">
             <div className="loadingSpinner">
-                <p>Loading</p>
+                <p>Loading...</p>
             </div>
         </div>
     )

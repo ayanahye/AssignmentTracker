@@ -4,6 +4,7 @@ import {Link, useNavigate} from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import {logout, reset} from '../features/auth/authSlice';
 import "../styles/Header.css";
+import logo from '../AssignmentTracker-thumb.png';
 
 function Header() {
     const navigate = useNavigate()
@@ -21,7 +22,9 @@ function Header() {
     return (
         <header className='header'>
             <div className='logo'>
-                <Link to='/'>AssignmentSetter</Link>
+                <Link to='/'>
+                    <img src={logo} alt="Logo" style={{height: '40px'}}/>
+                </Link>
             </div>
             <ul class="link-ele">
                 {user ? (

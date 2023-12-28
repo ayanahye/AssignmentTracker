@@ -39,7 +39,7 @@ function Dashboard() {
     }
 
     return (
-        <div className="cont1">
+        <div className="cont2">
             <section className='heading'>
                 <h1 style={{color:"rgb(74, 141, 212)"}}>Welcome {user && user.name}</h1>
                 <p>Assignments Dashboard</p>
