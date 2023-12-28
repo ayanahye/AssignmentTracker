@@ -23,6 +23,7 @@ const setAssignment = asyncHandler(async (req, res) => {
 
     const assignment = await Assignment.create({
         text: req.body.text,
+        dueDate: req.body.dueDate,
         user: req.user.id
     })
 

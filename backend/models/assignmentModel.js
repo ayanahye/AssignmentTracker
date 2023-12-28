@@ -11,6 +11,9 @@ const assignmentSchema = mongoose.Schema(
     text: {
         type: String,
         required: [true, 'Please add a text value']
+    },
+    dueDate: {
+        type: String,
     }
 }, 
 {

@@ -5,14 +5,16 @@ import {createAssignment} from '../features/assignments/assignmentSlice';
 
 function AssignmentForm() {
     const [text, setText] = useState("");
+    const [dueDate, setDueDate] = useState("");
 
     const dispatch = useDispatch()
 
     const onSubmit = e => {
         e.preventDefault()
 
-        dispatch(createAssignment({text}))
+        dispatch(createAssignment({text, dueDate}))
         setText('');
+        setDueDate('');
     }
 
     return (
@@ -22,11 +24,22 @@ function AssignmentForm() {
                     <input
                         type="text"
                         className="form-control"
-                        placeholder='Add Assignment'
+                        placeholder="Add Assignment"
                         id="text"
                         name="text"
                         value={text}
                         onChange={(e) => setText(e.target.value)}
+                    />
+                </div>
+                <div className="mb-3">
+                    <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Due Date"
+                        id="dueDate"
+                        name="dueDate"
+                        value={dueDate}
+                        onChange={(e) => setDueDate(e.target.value)}
                     />
                 </div>
                 <div className="mb-3">
